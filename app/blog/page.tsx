@@ -9,7 +9,7 @@ export default async function Blog() {
     return articles?.map((article) => {
         const { time, date } = formatDateTime(article.createdAt);
         return (
-            <div key={article.id} className="p-2 sm:p-0 border-b-[1px] border-neutral-700">
+            <div key={article.id} className="p-2 sm:p-0 sm:mb-10 border-b-[1px] border-neutral-700">
                 <h1 className="text-xl sm:text-3xl font-extrabold leading-none sm:w-[40rem] sm:text-center pb-6">{article.title}</h1>
                 <Link scroll={true} href={`/blog/${article.id}`}>
                     <Image

@@ -19,7 +19,7 @@ export default function Home() {
 
     <div className="w-full h-1/2 sm:w-1/2 sm:h-full flex flex-col justify-around sm:justify-center items-center sm:items-start p-8 sm:space-y-4">
         <h2
-          className="text-3xl sm:text-5xl font-bold hover:text-yellow-300 transition-colors hover:underline"
+          className="text-3xl sm:text-5xl font-bold hover:text-yellow-300 transition-colors cursor-default"
         >
           a big description
         </h2>

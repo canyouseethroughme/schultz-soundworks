@@ -9,7 +9,6 @@ export async function getArticles(skip: number = 0, first: number = 10): Promise
 
     const response = await fetch(endpoint, {
         method: "POST",
-        cache: "force-cache",
         headers: {
             "Content-Type": "application/json",
         },

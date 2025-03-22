@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 
 
 const links = [
+  { href: '/', label: 'home' },
   { href: '/about', label: 'about' },
   { href: '/alta-pagina', label: 'alta pagina?' },
   { href: '/blog', label: 'blog' },

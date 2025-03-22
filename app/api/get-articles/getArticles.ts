@@ -30,7 +30,6 @@ export async function getArticles(skip: number = 0, first: number = 10): Promise
                             }
                         }`,
         }),
-        // next: {revalidate: 6000}
     });
 
     const data = await response.json();

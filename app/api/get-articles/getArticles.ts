@@ -1,6 +1,6 @@
 import { Article } from "../get-article/getArticle";
 
-export async function getArticles(skip: number = 0, first: number = 10): Promise<Article[]> {
+export async function getArticles(skip: number = 0): Promise<Article[]> {
     const endpoint = process.env.NEXT_HYGRAPH_ENDPOINT;
     if (!endpoint) {
         throw new Error("NEXT_HYGRAPH_ENDPOINT is not defined");
@@ -15,7 +15,7 @@ export async function getArticles(skip: number = 0, first: number = 10): Promise
         },
         body: JSON.stringify({
             query: `query Articles {
-                            articles(skip: ${skip}, first: ${first}) {
+                            articles(orderBy: createdAt_DESC, skip: ${skip}, first: 100) {
                                 id
                                 title
                                 createdAt
@@ -33,6 +33,6 @@ export async function getArticles(skip: number = 0, first: number = 10): Promise
     });
 
     const data = await response.json();
-    return data.data.articles.reverse()
+    return data.data.articles;
 
 }
